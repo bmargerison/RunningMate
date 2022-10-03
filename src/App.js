@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div style={{ backgroundImage: `url(${background})`}}>
+        <div style={{ backgroundImage: `url(${background})`, opacity:0.3 }} >
       <Home />
       </div>
     </div>
