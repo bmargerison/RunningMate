@@ -1,3 +1,9 @@
 body {
   font-family: 'Raleway', sans-serif !important;
 }
+
+:root {
+  --text: #5B3292; /* Blue */
+  --shadow1: #FC9962; /* Pink */
+  --shadow2: #F0746C; /* Pink */
+}

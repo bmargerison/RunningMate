@@ -1,4 +1,5 @@
 import React from 'react'
+import './Header.css'
 
 function Header() {
   return (
@@ -6,7 +7,7 @@ function Header() {
       <div className="container">
         <div className="d-flex align-items-center mb-3 mb-md-0 me-md-auto">
           <img className="bi me-3" src={require('../img/logo.svg').default} alt="logo" width={40} height={40} />
-          <span className="fs-2">Running Pace Calculator</span>
+          <span className="fs-2 title">Running Pace Calculator</span>
         </div>
       </div>
     </header>
