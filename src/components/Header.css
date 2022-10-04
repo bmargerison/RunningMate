@@ -1,6 +1,6 @@
 .title {
-  color: var(--text);
-  text-shadow: 1px 1px var(--shadow1),
-               2px 2px var(--shadow2);
+  color: var(--brandcolor1);
+  text-shadow: 1px 1px var(--brandcolor2),
+               2px 2px var(--brandcolor3);
   font-style: italic;
 }

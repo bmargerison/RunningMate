@@ -3,7 +3,19 @@ body {
 }
 
 :root {
-  --text: #5B3292; /* Blue */
-  --shadow1: #FC9962; /* Pink */
-  --shadow2: #F0746C; /* Pink */
+  --brandcolor1: #5B3292; /* Blue */
+  --brandcolor2: #FC9962; /* Pink */
+  --brandcolor3: #F0746C; /* Pink */
+}
+
+.box {
+  border-radius: 10px;
+  border-style: solid;
+  border-color: var(--brandcolor1);
+  background: white;
+  padding: 20px;
+  width: 150px;
+  height: 200px;
+  box-shadow: 3px 3px var(--brandcolor2),
+              -3px -3px var(--brandcolor3);
 }
