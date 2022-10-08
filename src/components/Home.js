@@ -1,70 +1,36 @@
 import React from 'react'
 import './Home.css'
+import RaceForm from './RaceForm'
 
 function Home() {
   
   
   return (
-    <div className="container min-vh-100">
+    <div className="container min-vh-100 time-boxes p-4">
       <form>
-        <div className="container p-5 time-boxes">
+
           <div className="row">
             <div className="col box m-3">
-              <p>Recent race</p>
-              <select>
-                <option value="">Race distance...</option>
-                <option value="5km">5km</option>
-                <option value="10km">10km</option>
-                <option value="Half">Half marathon</option>
-                <option value="Marathon">Marathon</option>
-              </select>
-  
-                <div className="row">
-                  <p>Racetime</p>
-                  <div className="col shadow">
-                    <fieldset>
-                      <label>
-                        <input type="number" placeholder="Hours"/>
-                      </label>
-                    </fieldset>
-                  </div>
-                  <div className="col">
-                    <fieldset>
-                      <label>
-                        <input type="number" placeholder="Minutes"/>
-                      </label>
-                    </fieldset>
-                  </div>
-                  <div className="col">
-                    <fieldset>
-                      <label>
-                        <input type="number" placeholder="Seconds"/>
-                      </label>
-                    </fieldset>
-                  </div>
-                </div>
-             
+              <RaceForm/>
             </div>
             <div className="col box m-3">
+              <RaceForm/>
             </div>
           </div>
           <div className="row">
             <div className="col box m-3">
+              <RaceForm/>
             </div>
             <div className="col box m-3">
+              <RaceForm/>
             </div>
           </div>
-        </div>
       </form>
+      <div className="button p-2">
+          <input type="submit" value="Get my data" />
+      </div>
     </div>
   )
 }
 
 export default Home
-
-const style = {
-  control: (base) => ({
-    ...base,
-    boxShadow: "none"
-  })
-}

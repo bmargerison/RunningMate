@@ -1,0 +1,38 @@
+.time-boxes {
+  max-width: 800px;
+}
+
+select {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 10px 5px;
+  margin-bottom: 20px;
+  background-color:lightgrey;
+}
+
+label {
+  width: 50%;
+}
+
+fieldset {
+  width: 75px;
+}
+
+input {
+  border: 1px solid white;
+  width: 75px;
+  border-radius: 3px;
+  background-color:lightgrey;
+  line-height: 10px;
+  padding: 5px;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+p {
+  margin-bottom: 5px;
+}
