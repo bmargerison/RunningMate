@@ -1,14 +1,33 @@
-body {
-  font-family: 'Raleway', sans-serif !important;
-  font-size: 10px;
-  color: black;
-  font-weight: bold;
-}
-
 :root {
   --brandcolor1: #5B3292;
   --brandcolor2: #FC9962;
   --brandcolor3: #F0746C;
+}
+
+.background{
+  position: relative;
+  height: calc(100vh - 70px);
+}
+
+.background::before{
+  content:"";
+  background-image: url('./img/background.png');
+  opacity:0.2;
+  position:absolute;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+  z-index:-3;
+}
+
+html, body {
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
 }
 
 .box {
@@ -24,9 +43,9 @@ body {
 }
 
 input[type=submit] {
-  padding: 12px;
+  padding: 20px;
   width: auto;
-  font-size: 10px;
+  font-size: 15px;
   background: white;
   font-weight: 900;
   color: var(--brandcolor1);

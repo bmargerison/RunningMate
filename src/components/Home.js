@@ -6,7 +6,7 @@ function Home() {
   
   
   return (
-    <div className="container min-vh-100 time-boxes p-4">
+    <div className="container time-boxes p-4">
       <form>
 
           <div className="row">
