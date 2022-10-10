@@ -1,5 +1,6 @@
 .time-boxes {
-  max-width: 800px;
+  max-width: 1200px;
+  min-height: 150px;
 }
 
 select {
@@ -21,7 +22,7 @@ fieldset {
 
 input {
   border: 1px solid white;
-  width: 75px;
+  width: 100px;
   border-radius: 3px;
   background-color:lightgrey;
   line-height: 10px;
