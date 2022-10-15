@@ -1,8 +1,7 @@
 import React from 'react'
 import './RaceForm.css'
 
-function RaceForm() {
-  
+const RaceForm = ({handleTime}) => {
   
   return (
     <div className="container time-boxes">
@@ -19,21 +18,30 @@ function RaceForm() {
         <div className="col">
           <fieldset>
             <label>
-              <input type="number" placeholder="Hours"/>
+              <input
+              onChange={(event) => handleTime({hours: event.target.value})} 
+              type="number" 
+              placeholder="Hours"/>
             </label>
           </fieldset>
         </div>
         <div className="col">
           <fieldset>
             <label>
-              <input type="number" placeholder="Minutes"/>
+              <input 
+              onChange={(event) => handleTime({minutes: event.target.value})} 
+              type="number" 
+              placeholder="Minutes"/>
             </label>
           </fieldset>
         </div>
         <div className="col">
           <fieldset>
             <label>
-              <input type="number" placeholder="Seconds"/>
+              <input
+              onChange={(event) => handleTime({seconds: event.target.value})} 
+              type="number" 
+              placeholder="Seconds"/>
             </label>
           </fieldset>
         </div>
