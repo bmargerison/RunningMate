@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Home.css'
 import RaceForm from './RaceForm'
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
+  const [time, setTime] = useState({
+    hours: NaN,
+    minutes: NaN,
+    seconds: NaN
+  });
   const navigate = useNavigate();
 
   const handleSubmit = event => {
@@ -11,9 +16,10 @@ function Home() {
   }
 
   const handleTime = newTime => {
-    console.log(newTime)
+    const key = Object.keys(newTime)[0];
+    const value = parseInt(newTime[key]);
+    setTime({...time, [key]: value})
   }
-  
   
   return (
     <div className="container time-boxes p-4">
