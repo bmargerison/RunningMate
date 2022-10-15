@@ -1,14 +1,18 @@
 import React from 'react'
 import './Home.css'
 import RaceForm from './RaceForm'
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
-  
+  const navigate = useNavigate();
+
+  const handleSubmit = event => {
+    navigate('/results');
+  }
   
   return (
     <div className="container time-boxes p-4">
-      <form>
-
+      <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col box m-3">
               <RaceForm/>
@@ -25,10 +29,10 @@ function Home() {
               <RaceForm/>
             </div>
           </div>
+        <div className="button p-2">
+            <input type="submit" value="Get my data" />
+        </div>
       </form>
-      <div className="button p-2">
-          <input type="submit" value="Get my data" />
-      </div>
     </div>
   )
 }
