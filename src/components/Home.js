@@ -6,6 +6,7 @@ import * as calcs from '../data/Calculator'
 
 function Home() {
   const [time, setTime] = useState({
+    distance: '',
     hours: 0,
     minutes: 0,
     seconds: 0
@@ -19,8 +20,9 @@ function Home() {
 
   const handleTime = newTime => {
     const key = Object.keys(newTime)[0];
-    const value = parseInt(newTime[key]);
-    setTime({...time, [key]: value})
+    let value;
+    key === "distance" ? value = newTime[key] : value = parseInt(newTime[key]);
+    setTime({...time, [key]: value});
   }
   
   return (

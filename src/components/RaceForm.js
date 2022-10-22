@@ -1,12 +1,13 @@
 import React from 'react'
 import './RaceForm.css'
+import { DISTANCES } from '../data/RaceDistancesEnum'
 
 const RaceForm = ({handleTime}) => {
   
   return (
     <div className="container time-boxes">
       <p>Recent race</p>
-      <select>
+      <select onChange={(event) => handleTime({distance: event.target.value})} >
         <option value="">Race distance...</option>
         <option value="5km">5km</option>
         <option value="10km">10km</option>
