@@ -2,16 +2,18 @@ import React, { useState } from 'react'
 import './Home.css'
 import RaceForm from './RaceForm'
 import { useNavigate } from 'react-router-dom';
+import * as calcs from '../data/Calculator'
 
 function Home() {
   const [time, setTime] = useState({
-    hours: NaN,
-    minutes: NaN,
-    seconds: NaN
+    hours: 0,
+    minutes: 0,
+    seconds: 0
   });
   const navigate = useNavigate();
 
   const handleSubmit = event => {
+    calcs.getVdot(time)
     navigate('/results');
   }
 
