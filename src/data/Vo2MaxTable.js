@@ -1,6 +1,6 @@
-import DISTANCES from './RaceDistancesEnum'
+import { DISTANCES } from './RaceDistancesEnum'
 
-const VO2MAX = [
+export const VO2MAX = [
   {vdot: 30, [DISTANCES[5]]: 1840, [DISTANCES[10]]: 3826, [DISTANCES.Half]: 8464, [DISTANCES.Marathon]: 17357},
   {vdot: 31, [DISTANCES[5]]: 1791, [DISTANCES[10]]: 3723, [DISTANCES.Half]: 8241, [DISTANCES.Marathon]: 16917},
   {vdot: 32, [DISTANCES[5]]: 1745, [DISTANCES[10]]: 3626, [DISTANCES.Half]: 8029, [DISTANCES.Marathon]: 16499},
