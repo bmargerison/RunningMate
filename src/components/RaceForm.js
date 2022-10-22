@@ -9,10 +9,10 @@ const RaceForm = ({handleTime}) => {
       <p>Recent race</p>
       <select onChange={(event) => handleTime({distance: event.target.value})} >
         <option value="">Race distance...</option>
-        <option value="5km">5km</option>
-        <option value="10km">10km</option>
-        <option value="Half">Half marathon</option>
-        <option value="Marathon">Marathon</option>
+        <option value={DISTANCES[5]}>5km</option>
+        <option value={DISTANCES[10]}>10km</option>
+        <option value={DISTANCES.Half}>Half marathon</option>
+        <option value={DISTANCES.Marathon}>Marathon</option>
       </select>
       <div className="row">
         <p>Racetime</p>
