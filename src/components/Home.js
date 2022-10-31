@@ -14,7 +14,7 @@ function Home() {
   const navigate = useNavigate();
 
   const handleSubmit = event => {
-    calcs.getVdot(time)
+    calcs.getUserRunningData(time)
     navigate('/results');
   }
 
