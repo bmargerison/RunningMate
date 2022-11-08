@@ -1,8 +1,11 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom';
 import './Results.css'
 import { DISTANCES } from '../data/RaceDistancesEnum'
 
 function Results() {
+  const location = useLocation();
+  console.log(location.state.times)
   
   return (
     <div className="container p-4">
