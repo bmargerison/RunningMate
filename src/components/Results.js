@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
 import './Results.css'
-import { DISTANCES } from '../data/RaceDistancesEnum'
+import * as calcs from '../data/Calculator'
 
 function Results() {
   const location = useLocation();
@@ -33,7 +33,7 @@ function Results() {
                       {distance}
                     </div>
                     <div className="row">
-                      {location.state.times.racePaces[distance]}
+                      {calcs.getTime(location.state.times.racePaces[distance])}
                     </div>
                 </div>
                 )

@@ -34,4 +34,4 @@ const getRacePace = (vdot) => {
   return VO2MAX.filter(paces => paces.vdot === vdot)[0];
 }
 
-export { getVdot, getTrainingIntensities, getUserRunningData }
+export { getVdot, getTrainingIntensities, getUserRunningData, getTimeInSeconds, getTime }
