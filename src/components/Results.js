@@ -26,16 +26,15 @@ function Results() {
             </div>
             <div className="row px-3 py-1">
             {
-              Object.keys(location.state.times.racePaces).map(function(distance, time) {
+              Object.keys(location.state.times.racePaces).map(function(distance, i) {
                 return (
-                  <div className="col">
-                  <div className="row">
-                    {distance}
-  
-                  </div>
-                  <div className="row">
-                    {location.state.times.racePaces[distance]}
-                  </div>
+                  <div className="col" key={i}>
+                    <div className="row">
+                      {distance}
+                    </div>
+                    <div className="row">
+                      {location.state.times.racePaces[distance]}
+                    </div>
                 </div>
                 )
               })

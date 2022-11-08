@@ -5,7 +5,6 @@ const getUserRunningData = (time) => {
   const vdot = getVdot(getTimeInSeconds(time), time.distance);
   const runningData = getTrainingIntensities(vdot);
   runningData.racePaces = getRacePace(vdot);
-  console.log(getTime(getTimeInSeconds(time)))
   return runningData;
 }
 
