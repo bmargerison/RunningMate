@@ -2,10 +2,10 @@ import { VO2MAX } from './Vo2MaxTable'
 import { TRAINING_PACE } from './TrainingPaceTable';
 
 const getUserRunningData = (time) => {
-  const timeInSeconds = time.hours * 60 * 60 + time.minutes * 60 + time.seconds;
-  const vdot = getVdot(timeInSeconds, time.distance);
+  const vdot = getVdot(getTimeInSeconds(time), time.distance);
   const runningData = getTrainingIntensities(vdot);
   runningData.racePaces = getRacePace(vdot);
+  console.log(getTime(getTimeInSeconds(time)))
   return runningData;
 }
 
@@ -15,6 +15,16 @@ const getVdot = (time, distance) => {
     Math.abs(curr - time) < Math.abs(prev - time) ? curr : prev
   );
   return VO2MAX[timesArray.findIndex(x => x === nearestTime)].vdot;
+}
+
+const getTime = (timeInSeconds) => {
+  const date = new Date(null);
+  date.setSeconds(timeInSeconds);
+  return date.toISOString().substring(11, 19);
+}
+
+const getTimeInSeconds = (time) => {
+ return time.hours * 60 * 60 + time.minutes * 60 + time.seconds;
 }
 
 const getTrainingIntensities = (vdot) => {
