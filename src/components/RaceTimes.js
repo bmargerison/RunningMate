@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
-import './Results.css'
+import './RaceTimes.css'
 import * as calcs from '../data/Calculator'
 
 function RaceTimes() {
