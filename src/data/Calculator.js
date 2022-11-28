@@ -3,7 +3,8 @@ import { TRAINING_PACE } from './TrainingPaceTable';
 
 const getUserRunningData = (time) => {
   const vdot = getVdot(getTimeInSeconds(time), time.distance);
-  const runningData = getTrainingIntensities(vdot);
+  const runningData = { vdot: vdot };
+  runningData.trainingPaces = getTrainingIntensities(vdot);
   runningData.racePaces = getRacePace(vdot);
   return runningData;
 }
@@ -27,11 +28,15 @@ const getTimeInSeconds = (time) => {
 }
 
 const getTrainingIntensities = (vdot) => {
-  return TRAINING_PACE.filter(paces => paces.vdot === vdot)[0];
+  const trainingPaces = TRAINING_PACE.filter(paces => paces.vdot === vdot)[0];
+  delete trainingPaces['vdot'];
+  return trainingPaces;
 }
 
 const getRacePace = (vdot) => {
-  return VO2MAX.filter(paces => paces.vdot === vdot)[0];
+  const racePaces = VO2MAX.filter(paces => paces.vdot === vdot)[0];
+  delete racePaces['vdot'];
+  return racePaces;
 }
 
 export { getVdot, getTrainingIntensities, getUserRunningData, getTimeInSeconds, getTime }
