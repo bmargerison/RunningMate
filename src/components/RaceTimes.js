@@ -6,7 +6,7 @@ function RaceTimes(props) {
   const racePaces = props.racePaces;
   
   return (
-    <div className="container">
+    <div className="container box race-times-box text-center">
       <div className="row p-1">
         <h4>Your predicted race times are:</h4>
       </div>
@@ -16,10 +16,14 @@ function RaceTimes(props) {
           return (
             <div className="col px-4" key={i}>
               <div className="row">
-                {distance}
+                <div className="text-center">
+                  {distance}
+                </div>
               </div>
               <div className="row">
-                {calcs.getTime(racePaces[distance])}
+                <div className="text-center">
+                  {calcs.getTime(racePaces[distance])}
+                </div>
               </div>
           </div>
           )
