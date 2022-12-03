@@ -2,9 +2,11 @@ import React from 'react'
 import './Results.css'
 import RaceTimes from './RaceTimes'
 import TrainingPaces from './TrainingPaces'
+import { useLocation } from 'react-router-dom';
 
 function Results() {
-  
+  const location = useLocation();
+
   return (
     <div className="container p-4">
       <div className="row mt-3">
@@ -13,7 +15,7 @@ function Results() {
             <h4>Your VDOT is:</h4>
           </div>
           <div className="row p-2 text-center">
-            <h1>30</h1>
+            <h1>{location.state.times.vdot}</h1>
           </div>
         </div>
       </div>
