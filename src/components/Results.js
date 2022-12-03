@@ -20,14 +20,10 @@ function Results() {
         </div>
       </div>
       <div className="row mt-4">
-        <div className="container box">
-          <RaceTimes racePaces={location.state.times.racePaces}/>
-        </div>
+        <RaceTimes racePaces={location.state.times.racePaces}/>
       </div>
       <div className="row mt-4">
-        <div className="container box">
-          <TrainingPaces trainingPaces={location.state.times.trainingPaces}/>
-        </div>
+        <TrainingPaces trainingPaces={location.state.times.trainingPaces}/>
       </div>
     </div>
   )
