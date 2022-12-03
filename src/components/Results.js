@@ -1,6 +1,7 @@
 import React from 'react'
 import './Results.css'
 import RaceTimes from './RaceTimes'
+import TrainingPaces from './TrainingPaces'
 
 function Results() {
   
@@ -19,6 +20,11 @@ function Results() {
       <div className="row mt-4">
         <div className="container box">
           <RaceTimes />
+        </div>
+      </div>
+      <div className="row mt-4">
+        <div className="container box">
+          <TrainingPaces />
         </div>
       </div>
     </div>
