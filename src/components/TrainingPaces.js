@@ -1,10 +1,9 @@
 import React from 'react'
 import './TrainingPaces.css'
-import { useLocation } from 'react-router-dom';
 import * as calcs from '../data/Calculator'
 
-function TrainingPaces() {
-  const location = useLocation();
+function TrainingPaces(props) {
+  const trainingPaces = props.trainingPaces;
 
   return (
     <div className="container">
@@ -13,14 +12,14 @@ function TrainingPaces() {
       </div>
       <div className="row px-3 py-1">
       {
-        Object.keys(location.state.times.trainingPaces).map(function(distance, i) {
+        Object.keys(trainingPaces).map(function(distance, i) {
           return (
             <div className="col px-4" key={i}>
               <div className="row">
                 {distance}
               </div>
               <div className="row">
-                {calcs.getTime(location.state.times.trainingPaces[distance])}
+                {calcs.getTime(trainingPaces[distance])}
               </div>
           </div>
           )

@@ -26,7 +26,7 @@ function Results() {
       </div>
       <div className="row mt-4">
         <div className="container box">
-          <TrainingPaces />
+          <TrainingPaces trainingPaces={location.state.times.trainingPaces}/>
         </div>
       </div>
     </div>

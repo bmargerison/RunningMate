@@ -1,5 +1,4 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom';
 import './RaceTimes.css'
 import * as calcs from '../data/Calculator'
 
