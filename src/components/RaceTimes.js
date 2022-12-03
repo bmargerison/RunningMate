@@ -3,8 +3,8 @@ import { useLocation } from 'react-router-dom';
 import './RaceTimes.css'
 import * as calcs from '../data/Calculator'
 
-function RaceTimes() {
-  const location = useLocation();
+function RaceTimes(props) {
+  const racePaces = props.racePaces;
   
   return (
     <div className="container">
@@ -13,14 +13,14 @@ function RaceTimes() {
       </div>
       <div className="row px-3 py-1">
       {
-        Object.keys(location.state.times.racePaces).map(function(distance, i) {
+        Object.keys(racePaces).map(function(distance, i) {
           return (
             <div className="col px-4" key={i}>
               <div className="row">
                 {distance}
               </div>
               <div className="row">
-                {calcs.getTime(location.state.times.racePaces[distance])}
+                {calcs.getTime(racePaces[distance])}
               </div>
           </div>
           )
