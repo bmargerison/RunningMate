@@ -5,12 +5,11 @@ import * as calcs from '../data/Calculator'
 
 function TrainingPaces() {
   const location = useLocation();
-  console.log(location.state.times)
 
   return (
     <div className="container">
       <div className="row p-1">
-        <h4>Your predicted race times are:</h4>
+        <h4>Your recommended training paces are:</h4>
       </div>
       <div className="row px-3 py-1">
       {
