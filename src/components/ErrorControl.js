@@ -5,7 +5,7 @@ function ErrorControl(props) {
   const errorMessage = props.errorMessage;
 
   return (
-    <h1>{errorMessage}</h1>
+    <span className="error-message pt-3" >{errorMessage}</span>
   )
 }
 
