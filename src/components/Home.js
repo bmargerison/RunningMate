@@ -33,7 +33,7 @@ function Home() {
           </div>
         </div>
         <div className="button p-2">
-            <input type="submit" value="Get my data" />
+          <input type="submit" value="Get my data" />
         </div>
       </form>
     </div>
