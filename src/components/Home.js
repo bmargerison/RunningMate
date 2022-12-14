@@ -16,7 +16,12 @@ function Home() {
   const navigate = useNavigate();
 
   const handleSubmit = event => {
-    navigate('/results', {state:{times:calcs.getUserRunningData(time)}});
+    try {
+      throw new Error('Wrong information')
+      navigate('/results', {state:{times:calcs.getUserRunningData(time)}});
+    } catch {
+
+    }
   }
 
   const handleTime = newTime => {
