@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Home.css'
 import RaceForm from './RaceForm'
+import ErrorControl from './ErrorControl'
 import { useNavigate } from 'react-router-dom';
 import * as calcs from '../data/Calculator'
 
@@ -11,6 +12,7 @@ function Home() {
     minutes: 0,
     seconds: 0
   });
+  const [errorMessage, setErrorMessage] = useState('error message');
   const navigate = useNavigate();
 
   const handleSubmit = event => {
@@ -30,6 +32,9 @@ function Home() {
         <div className="row align-content-center">
           <div className="box m-3">
             <RaceForm handleTime={handleTime}/>
+            <div className="pt-3">
+              <ErrorControl errorMessage={errorMessage}/>
+            </div>
           </div>
         </div>
         <div className="button p-2">

@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './RaceForm.css'
 import { DISTANCES } from '../data/RaceDistancesEnum'
-import ErrorControl from './ErrorControl'
 
 const RaceForm = ({handleTime}) => {
-  const [errorMessage, setErrorMessage] = useState('error message');
   
   return (
     <div className="container time-boxes">
@@ -48,9 +46,6 @@ const RaceForm = ({handleTime}) => {
             </label>
           </fieldset>
         </div>
-      <div className="row">
-        <ErrorControl errorMessage={errorMessage}/>
-      </div>
       </div>
     </div>      
   )
