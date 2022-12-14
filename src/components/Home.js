@@ -18,10 +18,10 @@ function Home() {
   const handleSubmit = event => {
     event.preventDefault();
     try {
-      throw new Error('Wrong information')
+      calcs.checkData(time);
       navigate('/results', {state:{times:calcs.getUserRunningData(time)}});
-    } catch {
-
+    } catch (error) {
+      console.error(error);
     }
   }
 

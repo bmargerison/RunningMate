@@ -39,4 +39,8 @@ const getRacePace = (vdot) => {
   return racePaces;
 }
 
-export { getVdot, getTrainingIntensities, getUserRunningData, getTimeInSeconds, getTime }
+const checkData = (time) => {
+  throw new Error('Wrong information')
+}
+
+export { getVdot, getTrainingIntensities, getUserRunningData, getTimeInSeconds, getTime, checkData }
