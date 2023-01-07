@@ -61,7 +61,7 @@ const checkTimeLimits = (distance, time) => {
       if (time < 3470) {throw new Error('Please enter a value above 58 mins')};
       if (time > 900) {throw new Error('Please enter a value below 2 hours 30 mins')};
       break;
-    case DISTANCES['Marathon']:
+    default:
       if (time < 7270) {throw new Error('Please enter a value above 2 hours')};
       if (time > 18000) {throw new Error('Please enter a value below 5 hours')};
       break;
