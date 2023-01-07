@@ -40,7 +40,9 @@ const getRacePace = (vdot) => {
 }
 
 const checkData = (time) => {
-  throw new Error('Wrong information')
+  if (!time.distance) {
+    throw new Error('Please select a race distance')
+  }
 }
 
 export { getVdot, getTrainingIntensities, getUserRunningData, getTimeInSeconds, getTime, checkData }

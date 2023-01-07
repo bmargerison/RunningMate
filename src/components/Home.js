@@ -12,7 +12,7 @@ function Home() {
     minutes: 0,
     seconds: 0
   });
-  const [errorMessage, setErrorMessage] = useState('error message');
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = event => {
@@ -21,7 +21,7 @@ function Home() {
       calcs.checkData(time);
       navigate('/results', {state:{times:calcs.getUserRunningData(time)}});
     } catch (error) {
-      console.error(error);
+      setErrorMessage(error.message);
     }
   }
 
