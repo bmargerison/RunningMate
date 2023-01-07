@@ -44,8 +44,20 @@ const checkData = (time) => {
   if (!time.distance) {
     throw new Error('Please select a race distance')
   }
-  if (time.distance == DISTANCES[5] && getTimeInSeconds(time) < 757) {
-    throw new Error('Please enter a value above 13 mins')
+
+  switch (time.distance) {
+    case DISTANCES[5]:
+      if (getTimeInSeconds(time) < 757) {throw new Error('Please enter a value above 13 mins')};
+      break;
+    case DISTANCES[10]:
+      if (getTimeInSeconds(time) < 1579) {throw new Error('Please enter a value above 26 mins')};
+      break;
+    case DISTANCES['Half']:
+      if (getTimeInSeconds(time) < 3470) {throw new Error('Please enter a value above 58 mins')};
+      break;
+    case DISTANCES['Marathon']:
+      if (getTimeInSeconds(time) < 7270) {throw new Error('Please enter a value above 2 hours')};
+      break;
   }
 }
 
