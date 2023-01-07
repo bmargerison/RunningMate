@@ -29,13 +29,13 @@ const getTimeInSeconds = (time) => {
 }
 
 const getTrainingIntensities = (vdot) => {
-  const trainingPaces = TRAINING_PACE.filter(paces => paces.vdot === vdot)[0];
+  const trainingPaces = TRAINING_PACE.map(paces => paces.vdot === vdot)[0];
   delete trainingPaces['vdot'];
   return trainingPaces;
 }
 
 const getRacePace = (vdot) => {
-  const racePaces = VO2MAX.filter(paces => paces.vdot === vdot)[0];
+  const racePaces = VO2MAX.map(paces => paces.vdot === vdot)[0];
   delete racePaces['vdot'];
   return racePaces;
 }
@@ -47,7 +47,7 @@ const checkData = (time) => {
   checkTimeLimits(time.distance, getTimeInSeconds(time))
 }
 
-checkTimeLimits = (distance, time) => {
+const checkTimeLimits = (distance, time) => {
   switch (distance) {
     case DISTANCES[5]:
       if (time < 757) {throw new Error('Please enter a value above 13 mins')};
