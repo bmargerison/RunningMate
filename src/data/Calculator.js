@@ -1,5 +1,6 @@
 import { VO2MAX } from './Vo2MaxTable'
 import { TRAINING_PACE } from './TrainingPaceTable';
+import { DISTANCES } from './RaceDistancesEnum';
 
 const getUserRunningData = (time) => {
   const vdot = getVdot(getTimeInSeconds(time), time.distance);
@@ -42,6 +43,9 @@ const getRacePace = (vdot) => {
 const checkData = (time) => {
   if (!time.distance) {
     throw new Error('Please select a race distance')
+  }
+  if (time.distance == DISTANCES[5] && getTimeInSeconds(time) < 757) {
+    throw new Error('Please enter a value above 13 mins')
   }
 }
 
