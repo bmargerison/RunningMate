@@ -48,15 +48,19 @@ const checkData = (time) => {
   switch (time.distance) {
     case DISTANCES[5]:
       if (getTimeInSeconds(time) < 757) {throw new Error('Please enter a value above 13 mins')};
+      if (getTimeInSeconds(time) > 2100) {throw new Error('Please enter a value below 35 mins')};
       break;
     case DISTANCES[10]:
       if (getTimeInSeconds(time) < 1579) {throw new Error('Please enter a value above 26 mins')};
+      if (getTimeInSeconds(time) > 4200) {throw new Error('Please enter a value below 1 hour 10 mins')};
       break;
     case DISTANCES['Half']:
       if (getTimeInSeconds(time) < 3470) {throw new Error('Please enter a value above 58 mins')};
+      if (getTimeInSeconds(time) > 900) {throw new Error('Please enter a value below 2 hours 30 mins')};
       break;
     case DISTANCES['Marathon']:
       if (getTimeInSeconds(time) < 7270) {throw new Error('Please enter a value above 2 hours')};
+      if (getTimeInSeconds(time) > 18000) {throw new Error('Please enter a value below 5 hours')};
       break;
   }
 }
