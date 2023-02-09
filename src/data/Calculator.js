@@ -7,6 +7,7 @@ const getUserRunningData = (time) => {
   const runningData = { vdot: vdot };
   runningData.trainingPaces = getTrainingIntensities(vdot);
   runningData.racePaces = getRacePace(vdot);
+  console.log(runningData)
   return runningData;
 }
 
@@ -29,13 +30,16 @@ const getTimeInSeconds = (time) => {
 }
 
 const getTrainingIntensities = (vdot) => {
-  const trainingPaces = TRAINING_PACE.map(paces => paces.vdot === vdot)[0];
-  delete trainingPaces['vdot'];
+  var trainingPaces = {};
+  TRAINING_PACE.forEach(pace => pace.vdot === vdot ? trainingPaces = Object.assign({}, pace) : undefined);
+  delete trainingPaces['vdot']
+  console.log(TRAINING_PACE)
   return trainingPaces;
 }
 
 const getRacePace = (vdot) => {
-  const racePaces = VO2MAX.map(paces => paces.vdot === vdot)[0];
+  var racePaces;
+  VO2MAX.forEach(pace => pace.vdot === vdot ? racePaces = Object.assign({}, pace) : undefined);
   delete racePaces['vdot'];
   return racePaces;
 }
