@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { configureStore } from '@reactjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import statsReducer from './features/stats'
 
 // add a reducer for every state you want in the app

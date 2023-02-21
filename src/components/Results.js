@@ -2,10 +2,10 @@ import React from 'react'
 import './Results.css'
 import RaceTimes from './RaceTimes'
 import TrainingPaces from './TrainingPaces'
-import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux'
 
 function Results() {
-  const location = useLocation();
+  const data = useSelector((state) => state.stats.value);
 
   return (
     <div className="container p-4">
@@ -15,18 +15,18 @@ function Results() {
             <h4>Your VDOT is:</h4>
           </div>
           <div className="row p-2 text-center">
-            <h1>{location.state.times.vdot}</h1>
+            <h1>{data.vdot}</h1>
           </div>
         </div>
       </div>
       <div className="row mt-4">
-        <RaceTimes racePaces={location.state.times.racePaces}/>
+        <RaceTimes racePaces={data.racePaces}/>
       </div>
       <div className="row mt-4">
-        <TrainingPaces trainingPaces={location.state.times.trainingPaces}/>
+        <TrainingPaces trainingPaces={data.trainingPaces}/>
       </div>
     </div>
   )
 }
 
-export default Results
+export default Results;
