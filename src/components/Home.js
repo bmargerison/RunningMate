@@ -3,9 +3,12 @@ import './Home.css'
 import RaceForm from './RaceForm'
 import ErrorControl from './ErrorControl'
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux'
+import { setData } from '../features/stats'
 import * as calcs from '../data/Calculator'
 
 function Home() {
+  const dispatch = useDispatch();
   const [time, setTime] = useState({
     distance: '',
     hours: 0,
@@ -18,8 +21,8 @@ function Home() {
   const handleSubmit = event => {
     event.preventDefault();
     try {
-      calcs.checkData(time);
-      navigate('/results', {state:{times:calcs.getUserRunningData(time)}});
+      dispatch(setData(calcs.getUserRunningData(time)));
+      navigate('/results');
     } catch (error) {
       setErrorMessage(error.message);
     }
