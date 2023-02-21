@@ -11,4 +11,6 @@ export const statsSlice = createSlice({
   },
 });
 
+export const { setData } = statsSlice.actions;
+
 export default statsSlice.reducer;
