@@ -7,7 +7,6 @@ const getUserRunningData = (time) => {
   const runningData = { vdot: vdot };
   runningData.trainingPaces = getTrainingIntensities(vdot);
   runningData.racePaces = getRacePace(vdot);
-  console.log(runningData)
   return runningData;
 }
 
@@ -17,7 +16,7 @@ const getVdot = (time, distance) => {
     Math.abs(curr - time) < Math.abs(prev - time) ? curr : prev
   );
   return VO2MAX[timesArray.findIndex(x => x === nearestTime)].vdot;
-}
+};
 
 const getTime = (timeInSeconds) => {
   const date = new Date(null);
@@ -27,29 +26,28 @@ const getTime = (timeInSeconds) => {
 
 const getTimeInSeconds = (time) => {
  return time.hours * 60 * 60 + time.minutes * 60 + time.seconds;
-}
+};
 
 const getTrainingIntensities = (vdot) => {
   var trainingPaces = {};
   TRAINING_PACE.forEach(pace => pace.vdot === vdot ? trainingPaces = Object.assign({}, pace) : undefined);
-  delete trainingPaces['vdot']
-  console.log(TRAINING_PACE)
+  delete trainingPaces['vdot'];
   return trainingPaces;
-}
+};
 
 const getRacePace = (vdot) => {
   var racePaces;
   VO2MAX.forEach(pace => pace.vdot === vdot ? racePaces = Object.assign({}, pace) : undefined);
   delete racePaces['vdot'];
   return racePaces;
-}
+};
 
 const checkData = (time) => {
   if (!time.distance) {
-    throw new Error('Please select a race distance')
+    throw new Error('Please select a race distance');
   }
-  checkTimeLimits(time.distance, getTimeInSeconds(time))
-}
+  checkTimeLimits(time.distance, getTimeInSeconds(time));
+};
 
 const checkTimeLimits = (distance, time) => {
   switch (distance) {
@@ -69,7 +67,7 @@ const checkTimeLimits = (distance, time) => {
       if (time < 7270) {throw new Error('Please enter a value above 2 hours')};
       if (time > 18000) {throw new Error('Please enter a value below 5 hours')};
       break;
-  }
-}
+  };
+};
 
-export { getVdot, getTrainingIntensities, getUserRunningData, getTimeInSeconds, getTime, checkData }
+export { getVdot, getTrainingIntensities, getUserRunningData, getTimeInSeconds, getTime, checkData };
