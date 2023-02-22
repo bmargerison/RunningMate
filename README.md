@@ -12,7 +12,4 @@ npm start
 
 #### Tech
 
-React app utilising many core concepts.
-
-Planned work on the app:
- - Add React Redux in order to more easily manage state
+React app utilising many core concepts, including Redux to store and update current results (this is for practice, I know this is overkill!).
