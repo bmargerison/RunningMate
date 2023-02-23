@@ -1,4 +1,25 @@
 .vdot-box {
   max-width: 250px;
   min-height: 150px;
+  position: relative;
+  display: inline-block;
+}
+
+.vdot-text {
+  font-weight: normal;
+  position: absolute;
+  right: -130px;
+  top: 30px;
+  padding: 5px;
+}
+
+.vdot-box .vdot-text {
+  visibility: hidden;
+  background-color: grey;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.vdot-box:hover .vdot-text {
+  visibility: visible;
 }

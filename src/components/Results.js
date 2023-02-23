@@ -17,6 +17,7 @@ function Results() {
           <div className="row p-2 text-center">
             <h1>{data.vdot}</h1>
           </div>
+          <span class="vdot-text">Tooltip text</span>
         </div>
       </div>
       <div className="row mt-4">
