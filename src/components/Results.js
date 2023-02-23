@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux'
 
 function Results() {
   const data = useSelector((state) => state.stats.value);
+  const tooltipText = `VDOT is a measure of the amount of oxygen you consume during a 
+  minute of running, and is commonly used to detemine running ability.`
 
   return (
     <div className="container p-4">
@@ -17,7 +19,7 @@ function Results() {
           <div className="row p-2 text-center">
             <h1>{data.vdot}</h1>
           </div>
-          <span class="vdot-text">Tooltip text</span>
+          <span class="vdot-text">{tooltipText}</span>
         </div>
       </div>
       <div className="row mt-4">
