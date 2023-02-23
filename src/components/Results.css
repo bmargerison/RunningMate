@@ -8,6 +8,7 @@
 .vdot-text {
   font-weight: normal;
   position: absolute;
+  font-size: 0.9;
   width: 280px;
   text-align: center;
   left: 105%;
@@ -17,11 +18,16 @@
 
 .vdot-box .vdot-text {
   visibility: hidden;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.5s, tranform, 0.5s;
   background-color: var(--brandcolor1);
   color: white;
   border-radius: 10px;
 }
 
 .vdot-box:hover .vdot-text {
+  opacity: 1;
+  transform: translateX(0);
   visibility: visible;
 }
