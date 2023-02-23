@@ -8,15 +8,17 @@
 .vdot-text {
   font-weight: normal;
   position: absolute;
-  right: -130px;
-  top: 30px;
+  width: 280px;
+  text-align: center;
+  left: 105%;
+  top: 0;
   padding: 5px;
 }
 
 .vdot-box .vdot-text {
   visibility: hidden;
-  background-color: grey;
-  color: #fff;
+  background-color: var(--brandcolor1);
+  color: white;
   border-radius: 10px;
 }
 
