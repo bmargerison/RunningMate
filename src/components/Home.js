@@ -38,7 +38,7 @@ function Home() {
   return (
     <div className="container time-boxes p-4">
       <form onSubmit={handleSubmit}>
-        <div className="row align-content-center">
+        <div className="row d-flex justify-content-center">
           <div className="box m-3">
             <RaceForm handleTime={handleTime}/>
             <div className="pt-3">
@@ -46,7 +46,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="button p-2">
+        <div className="button p-2 d-flex justify-content-center">
           <input type="submit" value="Get my data" />
         </div>
       </form>

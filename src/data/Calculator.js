@@ -3,6 +3,7 @@ import { TRAINING_PACE } from './TrainingPaceTable';
 import { DISTANCES } from './RaceDistancesEnum';
 
 const getUserRunningData = (time) => {
+  checkData(time);
   const vdot = getVdot(getTimeInSeconds(time), time.distance);
   const runningData = { vdot: vdot };
   runningData.trainingPaces = getTrainingIntensities(vdot);
